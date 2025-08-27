@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form - Test Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f6fa;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+        }
+
+        .form-section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #ecf0f1;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .extension-hint {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .extension-hint h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .extension-hint p {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .hint-steps {
+            display: inline-block;
+            text-align: left;
+            color: #856404;
+        }
+
+        .hint-steps li {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 20px 15px;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 TechCorp Job Application</h1>
+            <p>Software Engineer Position - Apply Now</p>
+        </div>
+
+        <div class="form-container">
+            <div class="extension-hint">
+                <h3>🎉 Test the Job Form Filler Extension!</h3>
+                <p>This is a sample job application form to test the extension. Follow these steps:</p>
+                <ol class="hint-steps">
+                    <li>Install the Job Application Form Filler extension</li>
+                    <li>Click the extension icon and set up your information</li>
+                    <li>Come back to this page and click "Fill Form" in the extension popup</li>
+                    <li>Watch as your information automatically fills the form!</li>
+                </ol>
+            </div>
+
+            <form id="job-application-form" action="#" method="post">
+                <!-- Personal Information Section -->
+                <div class="form-section">
+                    <h2>👤 Personal Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="lastName" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" name="fullName">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="address">Street Address</label>
+                            <input type="text" id="address" name="address">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State/Province</label>
+                            <input type="text" id="state" name="state">
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP/Postal Code</label>
+                            <input type="text" id="zip" name="zipCode">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country">
+                                <option value="">Select Country</option>
+                                <option value="United States">United States</option>
+                                <option value="Canada">Canada</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Information Section -->
+                <div class="form-section">
+                    <h2>💼 Professional Experience</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="current-title">Current Job Title</label>
+                            <input type="text" id="current-title" name="currentTitle">
+                        </div>
+                        <div class="form-group">
+                            <label for="current-company">Current Company</label>
+                            <input type="text" id="current-company" name="currentCompany">
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <select id="experience" name="experience">
+                                <option value="">Select Experience</option>
+                                <option value="0-1 years">0-1 years</option>
+                                <option value="2-3 years">2-3 years</option>
+                                <option value="4-5 years">4-5 years</option>
+                                <option value="6-10 years">6-10 years</option>
+                                <option value="10+ years">10+ years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="linkedin">LinkedIn Profile</label>
+                            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname">
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolio">Portfolio/Website</label>
+                            <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="form-section">
+                    <h2>🎓 Education</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="university">University/College</label>
+                            <input type="text" id="university" name="university">
+                        </div>
+                        <div class="form-group">
+                            <label for="degree">Degree</label>
+                            <input type="text" id="degree" name="degree">
+                        </div>
+                        <div class="form-group">
+                            <label for="major">Major/Field of Study</label>
+                            <input type="text" id="major" name="major">
+                        </div>
+                        <div class="form-group">
+                            <label for="graduation-year">Graduation Year</label>
+                            <input type="text" id="graduation-year" name="graduationYear">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information Section -->
+                <div class="form-section">
+                    <h2>📝 Additional Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="cover-letter">Cover Letter / Why are you interested in this position?</label>
+                            <textarea id="cover-letter" name="coverLetter" placeholder="Tell us why you're the perfect fit for this role..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <div class="submit-section">
+                    <button type="submit" class="btn-submit">
+                        🚀 Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Prevent form submission for demo purposes
+        document.getElementById('job-application-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('🎉 Form submission prevented for demo purposes. In a real scenario, this would submit your application!');
+        });
+
+        // Add some visual feedback when fields are filled
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.style.borderColor = '#4CAF50';
+                } else {
+                    this.style.borderColor = '#e9ecef';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
