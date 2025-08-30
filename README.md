@@ -1,4 +1,4 @@
-# 🚀 Job Application Form Filler
+# Job Application Form Filler
 
 **Free up your time by automating the repetitive form filling process for job applications!**
 
@@ -8,17 +8,17 @@ A powerful Microsoft Edge/Chrome web extension that automatically detects and fi
 ![Version](https://img.shields.io/badge/Version-1.0.0-green?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-## ✨ Features
+## Features
 
-- **🎯 Smart Field Detection**: Automatically identifies form fields across different job sites
-- **⚡ One-Click Filling**: Fill entire forms instantly with a single click
-- **🔒 Privacy First**: All data stored locally - never sent to external servers
-- **📱 User-Friendly Interface**: Clean, intuitive popup and settings interface
-- **🎨 Visual Feedback**: Highlights filled fields and shows success notifications
-- **💾 Import/Export**: Backup and restore your data easily
-- **🔧 Customizable**: Manage all your information from a comprehensive settings page
+- ** Smart Field Detection**: Automatically identifies form fields across different job sites
+- ** One-Click Filling**: Fill entire forms instantly with a single click
+- ** Privacy First**: All data stored locally - never sent to external servers
+- ** User-Friendly Interface**: Clean, intuitive popup and settings interface
+- ** Visual Feedback**: Highlights filled fields and shows success notifications
+- ** Import/Export**: Backup and restore your data easily
+- ** Customizable**: Manage all your information from a comprehensive settings page
 
-## 🎯 Supported Fields
+## Supported Fields
 
 The extension can automatically fill these common job application fields:
 
@@ -39,7 +39,7 @@ The extension can automatically fill these common job application fields:
 **Additional:**
 - Cover Letter/Message
 
-## 📥 Installation
+## Installation
 
 ### Option 1: Load as Unpacked Extension (Development)
 
@@ -64,7 +64,7 @@ The extension can automatically fill these common job application fields:
 ### Option 2: Install from Chrome Web Store (Coming Soon)
 *The extension will be available on the Chrome Web Store once reviewed and approved.*
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Initial Setup
 1. Click the extension icon in your browser toolbar
@@ -83,14 +83,14 @@ The extension can automatically fill these common job application fields:
 - Open `test-form.html` in your browser to try the extension on a sample form
 - This test page demonstrates all the field types the extension can detect
 
-## 💡 Usage Tips
+## Usage Tips
 
 - **Fill Complete Information**: The more fields you complete in settings, the better the auto-fill experience
 - **Review Before Submitting**: Always review filled forms before submission
 - **Custom Cover Letters**: While the extension can fill a default cover letter, consider customizing it for each application
 - **Works on Most Sites**: Compatible with LinkedIn, Indeed, company career pages, and most job application forms
 
-## 🛠️ Technical Details
+## Technical Details
 
 ### File Structure
 ```
@@ -125,7 +125,7 @@ Fill-Online-Application-Form/
 - **Pattern Matching**: Intelligent keyword matching for field identification
 - **Context Analysis**: Considers surrounding text and form structure
 
-## 🔧 Development
+## Development
 
 ### Prerequisites
 - Basic knowledge of JavaScript, HTML, CSS
@@ -140,7 +140,7 @@ Fill-Online-Application-Form/
 ### Building
 No build process required - this is a vanilla JavaScript extension.
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
@@ -157,7 +157,7 @@ We welcome contributions! Here's how you can help:
 - Bug fixes and optimizations
 - Documentation improvements
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Extension Not Detecting Fields?
 - Make sure the page is fully loaded
@@ -175,31 +175,31 @@ We welcome contributions! Here's how you can help:
 - Try reloading the page
 - Disable conflicting extensions temporarily
 
-## 📱 Browser Compatibility
+## Browser Compatibility
 
-- ✅ Microsoft Edge (Chromium-based)
-- ✅ Google Chrome
-- ✅ Brave Browser
-- ✅ Other Chromium-based browsers
+-  Microsoft Edge (Chromium-based)
+-  Google Chrome
+-  Brave Browser
+-  Other Chromium-based browsers
 
-## 🔐 Privacy & Security
+##  Privacy & Security
 
 - **Local Storage Only**: All data is stored locally in your browser
 - **No External Servers**: No data is sent to external servers
 - **No Tracking**: The extension doesn't track your usage or collect analytics
 - **Open Source**: Full code is available for review
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Thanks to all job seekers who inspired this project
 - Built with modern web extension APIs
 - Icons created using Python PIL
 
-## 📞 Support
+##  Support
 
 Having issues? Here's how to get help:
 
@@ -210,6 +210,6 @@ Having issues? Here's how to get help:
 
 ---
 
-**⭐ Star this repository if it helps you land your dream job!**
+** Star this repository if it helps you land your dream job**
 
-Made with ❤️ for job seekers everywhere.
+Made with love for job seekers everywhere.
