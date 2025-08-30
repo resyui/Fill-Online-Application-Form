@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h2>🚀 Job Form Filler</h2>
+    <p class="tagline">Fill job applications instantly</p>
+  </div>
+
+  <div class="main-content">
+    <!-- Status Section -->
+    <div class="status-section">
+      <div id="status-indicator" class="status-indicator">
+        <span id="status-text">Scanning page...</span>
+        <span id="fields-count" class="fields-count"></span>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="actions-section">
+      <button id="fill-form" class="btn-primary" disabled>
+        <span class="btn-icon">✨</span>
+        Fill Form
+      </button>
+      
+      <button id="scan-fields" class="btn-secondary">
+        <span class="btn-icon">🔍</span>
+        Scan Fields
+      </button>
+    </div>
+
+    <!-- Quick Info Section -->
+    <div class="quick-info">
+      <h3>Quick Info</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <label>Name:</label>
+          <input type="text" id="quick-name" placeholder="Your full name">
+        </div>
+        <div class="info-item">
+          <label>Email:</label>
+          <input type="email" id="quick-email" placeholder="your@email.com">
+        </div>
+        <div class="info-item">
+          <label>Phone:</label>
+          <input type="tel" id="quick-phone" placeholder="(555) 123-4567">
+        </div>
+      </div>
+      <button id="save-quick" class="btn-save">Save Quick Info</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-section">
+      <button id="open-settings" class="btn-link">
+        <span class="btn-icon">⚙️</span>
+        Manage All Information
+      </button>
+    </div>
+
+    <!-- Detected Fields Preview -->
+    <div id="detected-fields" class="detected-fields" style="display: none;">
+      <h3>Detected Fields</h3>
+      <div id="fields-list" class="fields-list"></div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="success-message" class="success-message" style="display: none;">
+      <span class="success-icon">✅</span>
+      <span id="success-text">Form filled successfully!</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="version">v1.0.0</p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

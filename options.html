@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Job Application Form Filler - Settings</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f6fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e9ecef;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 12px;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    .btn-secondary {
+      background: #95a5a6;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #7f8c8d;
+      transform: translateY(-1px);
+    }
+
+    .btn-danger {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #c0392b;
+      transform: translateY(-1px);
+    }
+
+    .success-message {
+      background: #d5f4e6;
+      color: #27ae60;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #a8e6cf;
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tips {
+      background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .tips h3 {
+      color: #856404;
+      margin-bottom: 10px;
+    }
+
+    .tips ul {
+      color: #856404;
+      padding-left: 20px;
+    }
+
+    .tips li {
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .actions {
+        flex-direction: column;
+      }
+      
+      .container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 Job Application Form Filler</h1>
+      <p>Manage your information for automatic form filling</p>
+    </div>
+
+    <div class="success-message" id="success-message">
+      <span>✅</span>
+      <span>Information saved successfully!</span>
+    </div>
+
+    <div class="tips">
+      <h3>💡 Pro Tips:</h3>
+      <ul>
+        <li>Fill in as much information as possible for better form detection</li>
+        <li>The extension works on most job sites including LinkedIn, Indeed, and company career pages</li>
+        <li>Your data is stored locally and never sent to external servers</li>
+        <li>Use the "Test Fill" button to see how well the extension detects form fields</li>
+      </ul>
+    </div>
+
+    <!-- Personal Information Section -->
+    <div class="section">
+      <h2>👤 Personal Information</h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Doe">
+        </div>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john.doe@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(555) 123-4567">
+        </div>
+        <div class="form-group full-width">
+          <label for="address">Street Address</label>
+          <input type="text" id="address" placeholder="123 Main Street, Apt 4B">
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="New York">
+        </div>
+        <div class="form-group">
+          <label for="state">State/Province</label>
+          <input type="text" id="state" placeholder="NY">
+        </div>
+        <div class="form-group">
+          <label for="zipCode">ZIP/Postal Code</label>
+          <input type="text" id="zipCode" placeholder="10001">
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" placeholder="United States">
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Information Section -->
+    <div class="section">
+      <h2>💼 Professional Information</h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="currentTitle">Current Job Title</label>
+          <input type="text" id="currentTitle" placeholder="Software Engineer">
+        </div>
+        <div class="form-group">
+          <label for="currentCompany">Current Company</label>
+          <input type="text" id="currentCompany" placeholder="Tech Corp Inc.">
+        </div>
+        <div class="form-group">
+          <label for="experience">Years of Experience</label>
+          <input type="text" id="experience" placeholder="5 years">
+        </div>
+        <div class="form-group">
+          <label for="linkedin">LinkedIn Profile URL</label>
+          <input type="url" id="linkedin" placeholder="https://linkedin.com/in/johndoe">
+        </div>
+        <div class="form-group">
+          <label for="portfolio">Portfolio/Website URL</label>
+          <input type="url" id="portfolio" placeholder="https://johndoe.dev">
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="section">
+      <h2>🎓 Education</h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="university">University/College</label>
+          <input type="text" id="university" placeholder="Stanford University">
+        </div>
+        <div class="form-group">
+          <label for="degree">Degree</label>
+          <input type="text" id="degree" placeholder="Bachelor of Science">
+        </div>
+        <div class="form-group">
+          <label for="major">Major/Field of Study</label>
+          <input type="text" id="major" placeholder="Computer Science">
+        </div>
+        <div class="form-group">
+          <label for="graduationYear">Graduation Year</label>
+          <input type="text" id="graduationYear" placeholder="2020">
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Information Section -->
+    <div class="section">
+      <h2>📝 Additional Information</h2>
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label for="coverLetter">Default Cover Letter/Message</label>
+          <textarea id="coverLetter" placeholder="Write a brief cover letter or message that can be used for job applications..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button class="btn btn-primary" id="save-data">
+        <span>💾</span>
+        Save Information
+      </button>
+      <button class="btn btn-secondary" id="import-data">
+        <span>📁</span>
+        Import Data
+      </button>
+      <button class="btn btn-secondary" id="export-data">
+        <span>📤</span>
+        Export Data
+      </button>
+      <button class="btn btn-danger" id="clear-data">
+        <span>🗑️</span>
+        Clear All Data
+      </button>
+    </div>
+  </div>
+
+  <!-- Hidden file input for import -->
+  <input type="file" id="file-input" style="display: none;" accept=".json">
+
+  <script src="options.js"></script>
+</body>
+</html>
